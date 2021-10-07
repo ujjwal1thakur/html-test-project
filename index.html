@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>backtracking</title>
+</head>
+<body>
+  <h1>backtracking</h1>
+<p>copyright &copy2002 by david matuszek</p>
+<p>Backtracking is a form of recursion.</p>
+<p>The usual scenario is that you are <em>faced</em> with a number of <i>options</i>, and you must choose one of these. After you make your choice you will get a new set of options; just what set of options you get depends on what choice you made. This procedure is repeated over and over until you reach a final state. If you made a good sequence of choices, your final state is a goal state; if you didn't, it isn't.</p>
+<p>Conceptually, you start at the <strong> of a tree</strong>; the tree probably has some <b>good</b> leaves and some bad leaves, <ins>though</ins> it may be that the <del>leaves</del> are all good or all bad. You want to get to a good leaf. At each node, beginning with the root, you choose one of its children to move to, and you keep this up until you get to a leaf.</p>
+<p>Suppose <sub>you</sub> get to <sup>a bad</sup> leaf. You can backtrack to<br> continue the search for a good leaf by revoking your most recent choice, and trying out the next option in that set of options. If you run out of options, revoke the choice that got you here, and try another choice at that node. If you end up at the root with no options left, there are no good leaves to be found.</p>
+<p>This needs an example</p>
+<img src="images\treesearch.gif" />
+<hr>
+<ol>
+  <li>Starting at Root, your options are  A and B. You choose A.</li>
+  <li>At A, your options are C and D. You choose C.</li>
+  <li>C is bad. Go back to A.</li>
+  <li>At A, you have already tried C, and it failed. Try D.</li>
+  <li>D is bad. Go back to A.</li>
+</ol>
+<ul>
+  <li>At A, you have no options left to try. Go back to Root.</li>
+  <li>At Root, you have already tried A. Try B.</li>
+  <li>At B, your options are E and F.</li><li>Try E.</li></ul>
+<pre>
+  public class BinaryTree {
+    BinaryTree leftChild = null;
+    BinaryTree rightChild = null;
+    boolean isGoalNode = false;
+    String name;
+    
+    BinaryTree(String name, BinaryTree left, BinaryTree right, boolean isGoalNode) {
+        this.name = name;
+        leftChild = left;
+        rightChild = right;
+        this.isGoalNode = isGoalNode;
+    }
+}
+</pre>
+<table border="1px" cellpadding="10px" cellspacing="10px" align="center">
+  <thead>
+    <tr align="center">
+      <th></th>
+      <th>2 by 3 map</th>
+      <th>3 by 3 map</th>
+      <th>3 by 4 map</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>method 1</td>
+    <td>90 ms</td>
+    <td>40 ms</td>
+    <td>30 ms</td>
+  </tr>
+  <tr>
+    <td>method 2</td>
+    <td>30 ms</td>
+    <td>50 ms</td>
+    <td>30 ms</td>
+  </tr>
+</tbody>
+</table><br>
+<table border="1px" align="center">
+  <thead>
+    <tr>
+    <th rowspan="2">heading 1</th>
+    <th>heading 2</th>
+    <th rowspan="2">heading 3</th>
+  </tr>
+<tr>
+  <th>subhead2</th>
+</tr>
+    
+  </thead>
+</table>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/62bEQHRAymo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<a href="http://google.com/">go to google</a><br>
+<a href="author.html">go to authors page</a><br>
+<a href="https://www.prepbytes.com/?utm_source=gadbrandkeyword&utm_medium=prepbyteskeyword&utm_campaign=brandcampaign&gclid=CjwKCAjwzOqKBhAWEiwArQGwaCH51qGk6mIFB84N1lbAs6xrj60stMBEyIYCN7zNiKFFAXBe36184BoCGYwQAvD_BwE"/>go to prepytes</a>
+<br>
+<!-- irame shows another wbsite -->
+<iframe src="https://questions.examside.com/past-years/gate/question/all-the-resistances-in-the-circuit-of-fig-are-of-1-omega-eac-gate-ee-1992-marks-1-5a886af49f913.htm"width="560" height="315"frameborder="1"></iframe> </body>
+ 
+
+
+
+</html>
